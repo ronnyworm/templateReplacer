@@ -68,11 +68,9 @@ begin
 		vars.each_with_index do |v, index|
 			tmpdok = String.new(dok)
 
-			puts tmpdok
 			varnames.each_with_index do |name, index2|
 				tmpdok.gsub!("*** #{name} ***", v[index2])
 			end
-			puts tmpdok
 
 			writefile.write(tmpdok + "\n\n")
 		end
