@@ -11,6 +11,8 @@ if ARGV.length != 2
 
 	puts "Beispielaufruf: ./templateReplacer.rb /vollstaendiger/Pfad/tdok /vollst/Pfad/vardok"
 	puts "Ergebnis ist '(Name tdok).replaced' im selben Verzeichnis, in dem die einzelnen Ersetzungen mit zwei Zeilenumbrüchen voneinander getrennt liegen."
+	puts ""
+	puts "Es können Ersetzungen ineinander geschachtelt werden. Sie werden nacheinander von links nach rechts im vardok abgearbeitet."
 
 	exit
 end
