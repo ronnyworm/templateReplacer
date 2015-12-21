@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+puts "start"
+
 if ARGV.length != 2
 	puts "Sie haben #{ARGV.length} Parameter übergeben."
 
@@ -27,11 +29,8 @@ if not File.exist?(vardok)
 	exit
 end
 
-
-# Herausfinden, wie die erste Variable heißt
-# erste Variable ersetzen
-
 varnames = Array.new
+vars = Array.new
 
 begin
     readfile = File.new(vardok, "r")
@@ -40,12 +39,16 @@ begin
 
     while (line = readfile.gets)
     	if first_line
-    		varnames = line.split("***")
+    		varnames = line.split(";;;")
     		first_line = false
+    		next
+    	end
 
-    		puts varnames
-    	end    	
+    	tmp = line.split(";;;")
+    	vars << tmp
     end
+
+    puts vars[1][0]
 
     readfile.close
 rescue => err
