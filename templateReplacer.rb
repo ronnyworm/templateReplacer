@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-puts "start"
-
 if ARGV.length != 2
 	puts "Sie haben #{ARGV.length} Parameter übergeben."
 
@@ -12,7 +10,7 @@ if ARGV.length != 2
 	puts "Dann wird im tdok, wo *** holzname *** steht, jeweils der Wert aus der ersten Spalte ersetzt."
 
 	puts "Beispielaufruf: ./templateReplacer.rb /vollstaendiger/Pfad/tdok /vollst/Pfad/vardok"
-	puts "Ergebnis ist '(Name tdok).replaced' im selben Verzeichnis."
+	puts "Ergebnis ist '(Name tdok).replaced' im selben Verzeichnis, in dem die einzelnen Ersetzungen mit zwei Zeilenumbrüchen voneinander getrennt liegen."
 
 	exit
 end
@@ -32,26 +30,54 @@ end
 varnames = Array.new
 vars = Array.new
 
+# Werte holen
 begin
-    readfile = File.new(vardok, "r")
+	readfile = File.new(vardok, "r")
 
-    first_line = true
+	first_line = true
 
-    while (line = readfile.gets)
-    	if first_line
-    		varnames = line.split(";;;")
-    		first_line = false
-    		next
-    	end
+	while (line = readfile.gets)
+		if first_line
+			varnames = line.strip.split(";;;")
+			first_line = false
+			next
+		end
 
-    	tmp = line.split(";;;")
-    	vars << tmp
-    end
+		tmp = line.strip.split(";;;")
+		vars << tmp
+	end
 
-    puts vars[1][0]
-
-    readfile.close
+	readfile.close
 rescue => err
-    puts "Exception: #{err}"
-    err
+	puts "Exception: #{err}"
+	err
+end
+
+dok = ""
+tmpdok = ""
+
+# Werte einsetzen
+begin
+	readfile = File.new(tdok, "r")
+	while (line = readfile.gets)
+		dok += line
+	end
+	readfile.close
+
+	File.open("#{tdok}.replaced", 'w') do |writefile|
+		vars.each_with_index do |v, index|
+			tmpdok = String.new(dok)
+
+			puts tmpdok
+			varnames.each_with_index do |name, index2|
+				tmpdok.gsub!("*** #{name} ***", v[index2])
+			end
+			puts tmpdok
+
+			writefile.write(tmpdok + "\n\n")
+		end
+	end
+rescue => err
+	puts "Exception: #{err}"
+	err
 end
