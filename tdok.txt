@@ -1,2 +1,0 @@
-*** yeah ***void alSource{n}{if} (ALuint sourceName, ALenum*** bla *** paramName, T value);
-void alSource{n}{if}v (*** bla *** sourceName, ALenum paramName, T *values);
