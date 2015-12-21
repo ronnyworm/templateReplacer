@@ -45,7 +45,7 @@ begin
 			next
 		end
 
-		tmp = line.strip.split(";;;")
+		tmp = line.strip.gsub("\\n", "\n").split(";;;")
 		vars << tmp
 	end
 
