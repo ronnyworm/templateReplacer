@@ -21,10 +21,12 @@ When this is done correctly, *** variableA *** will be replaced by the values in
 	# or if templateReplacer.rb is in the same directory
 	./templateReplacer.rb tdok vardok
 
+	see the example directory
+
 ## Result
 The result will be '(name of tdok).replaced' in the same directory. The different replacements are separated by two line breaks in this file.
 
 
 ## Notes
-It is possible to nest replacements. They are performed from left to right in vardok.
+It is possible to nest replacements. They are performed from left to right in vardok. See example directory.
 
