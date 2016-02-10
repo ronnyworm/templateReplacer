@@ -1,0 +1,9 @@
+				<li>
+					<div class="title-row">
+						<time class="date">*** date ***</time>
+						<span class="location">*** city *** GERMANY</span>
+						<span>*** club *** </span>
+						*** buttons ***
+					</div>
+					*** slide ***
+				</li>

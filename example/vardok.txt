@@ -1,0 +1,7 @@
+buttons;;;slide;;;additional;;;date;;;city;;;club
+;;;;;;;;;14.02.2015;;;cityX;;;GigA
+;;;;;;;;;28.11.2014;;;cityX;;;GigB
+<div class="buttons">\n							<a id="gig1" class="open-link" href="#">\n								<span class="opener">MORE INFOS</span>\n							</a>\n						</div>;;;<!-- slide -->\n					<div class="slide">\n						<div class="holder">\n							<p>*** additional ***</p>\n						</div>\n					</div>;;;also on stage: <br> Bands sk;;;10.10.2014;;;cityf;;;GigP
+<div class="buttons">\n							<a id="gig1" class="open-link" href="#">\n								<span class="opener">MORE INFOS</span>\n							</a>\n						</div>;;;<!-- slide -->\n					<div class="slide">\n						<div class="holder">\n							<p>*** additional ***</p>\n						</div>\n					</div>;;;also on stage: <br> other Band;;;26.09.2014;;;cityd;;;GigW
+;;;;;;;;;06.09.2014;;;cityA;;;GigC
+;;;;;;;;;05.09.2014;;;cityZ;;;GigD

@@ -1,0 +1,37 @@
+		<!-- container -->
+		<div class="container">
+			<!-- breadcrumbs -->
+			<nav class="breadcrumbs">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li>Gigs</li>
+				</ul>
+			</nav>
+			<h1>Upcoming Gigs</h1>
+			<!-- concerts-list -->
+			<ul class="concerts-list">
+upcoming_gigs_replaced
+
+				<!--<li>
+					<div class="title-row">
+						<time class="date" datetime="2013-11-02">02.11.2013</time>
+						<span class="location">Y</span>
+						<span>@Festival</span>
+						<div class="buttons">
+							<a id="gig1" class="open-link" href="#">
+								<span class="opener">MORE INFOS</span>
+							</a>
+						</div>
+					</div>
+					<!- slide ->
+					<div class="slide">
+						<div class="holder">
+							<p>also on stage: <br> BandA, BandB</p>
+						</div>
+					</div>
+				</li>-->
+				
+		
+			
+			</ul>
+		</div>

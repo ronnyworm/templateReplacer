@@ -1,18 +1,11 @@
 #!/usr/bin/env ruby
 
 if ARGV.length != 2
-	puts "Sie haben #{ARGV.length} Parameter übergeben."
-
-	puts "Mit diesem Skript ist es möglich, ein Template-Dokument (tdok) mit mehreren Variablen zu ersetzen. Die Werte, die eingesetzt werden, stehen in einem anderen Dokument (vardok)."
-	puts "Die Variablen im tdok sind gekennzeichnet durch diese Schreibeweise (mit Leerzeichen!) : *** varname ***"
-	puts "Im vardok sind die Werte durch ;;; voneinander getrennt. Zeilenumbrüche trennen die einzelnen Ersetzungsdokumente. In der ersten Zeile muss stehen, wie die einzelnen Variablen heißen, die ersetzt werden sollen. Zb so:"
-	puts "holzname;;;blavariable;;;fertigvariable"
-	puts "Dann wird im tdok, wo *** holzname *** steht, jeweils der Wert aus der ersten Spalte ersetzt."
-
-	puts "Beispielaufruf: ./templateReplacer.rb /vollstaendiger/Pfad/tdok /vollst/Pfad/vardok"
-	puts "Ergebnis ist '(Name tdok).replaced' im selben Verzeichnis, in dem die einzelnen Ersetzungen mit zwei Zeilenumbrüchen voneinander getrennt liegen."
-	puts ""
-	puts "Es können Ersetzungen ineinander geschachtelt werden. Sie werden nacheinander von links nach rechts im vardok abgearbeitet."
+	File.open("README.md", "r") do |infile|
+	    while (line = infile.gets)
+	        puts "#{line}"
+	    end
+	end
 
 	exit
 end
