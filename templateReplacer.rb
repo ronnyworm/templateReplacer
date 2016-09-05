@@ -38,8 +38,10 @@ begin
 			next
 		end
 
-		tmp = line.strip.gsub("\\n", "\n").split(";;;")
-		vars << tmp
+		unless line.strip.empty?
+			tmp = line.strip.gsub("\\n", "\n").split(";;;")
+			vars << tmp
+		end
 	end
 
 	readfile.close
@@ -64,7 +66,7 @@ begin
 			tmpdok = String.new(dok)
 
 			varnames.each_with_index do |name, index2|
-				tmpdok.gsub!("*** #{name} ***", v[index2])
+				tmpdok.gsub!("*** #{name} ***", v[index2] ? v[index2] : "")
 			end
 
 			writefile.write(tmpdok + "\n\n")
