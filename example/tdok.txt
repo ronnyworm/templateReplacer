@@ -1,3 +1,4 @@
+vardok.txt
 				<li>
 					<div class="title-row">
 						<time class="date">*** date ***</time>
